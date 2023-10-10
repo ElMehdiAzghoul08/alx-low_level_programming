@@ -16,7 +16,7 @@ int main(void)
 
 	char ch = 65;
 
-	while (ch < = 90)
+	while (ch <= 90)
 	{
 		putchar(ch);
 		ch++;
