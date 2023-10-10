@@ -3,18 +3,18 @@
 /**
  * main - entry point
  *
- * Description : alphabet letters
+ * Description : numbers
  *
  * Return: 0 (success)
  */
 
 int main(void)
 {
-	int n;
+	int r;
 
-	for (n = 48; n < 57; n++)
+	for (r = 0; r <= 9; r++)
 	{
-		putchar(n);
+		putchar(r + 48);
 	}
 	putchar("\n");
 	return (0);
