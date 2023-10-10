@@ -11,11 +11,13 @@
 int main(void)
 {
 	char ch = 97;
-
-	while (ch <= 122)
-
 	char ch = 65;
 
+	while (ch <= 122)
+	{
+		putchar(ch);
+		ch++;
+	}
 	while (ch <= 90)
 	{
 		putchar(ch);
