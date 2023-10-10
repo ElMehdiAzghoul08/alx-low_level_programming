@@ -12,11 +12,10 @@ int main(void)
 {
 	int digit;
 
-	while (digit = 48)
-	while (digit <= 57)
+	for (digit = 48; digit <= 57)
 	{
 		putchar(digit);
-		digit++;
+		digit++
 	}
 	putchar("\n");
 	return (0);
