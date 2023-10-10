@@ -10,7 +10,8 @@
 
 int main(void)
 {
-	char (ch = 97);
+	char ch = 97;
+
 	while (ch <= 122)
 	{
 		putchar(ch);
