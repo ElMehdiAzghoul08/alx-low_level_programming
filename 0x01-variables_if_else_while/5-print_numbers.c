@@ -14,7 +14,7 @@ int main(void)
 
 	while (digit <= 57)
 	{
-		printf(digit);
+		printf("%d", digit);
 		digit++;
 	}
 	printf("\n");
