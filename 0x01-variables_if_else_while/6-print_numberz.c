@@ -10,8 +10,9 @@
 
 int main(void)
 {
-	int digit = 48;
+	int digit;
 
+	while (digit = 48)
 	while (digit <= 57)
 	{
 		putchar(digit);
