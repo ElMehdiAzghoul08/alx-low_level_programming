@@ -13,7 +13,7 @@ void print_numbers(void)
 		int pt = 0;
 
 		while
-			(pt >= 0 && pt <= 9);
+			(pt <= 9);
 
 
 	{
