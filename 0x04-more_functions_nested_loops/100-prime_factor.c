@@ -8,8 +8,8 @@ int main(void)
 
 {
 	long r, x;
-	double square = sqrt(number);
 	long number = 612852475143;
+	double square = sqrt(number);
 
 	for (r = 1; r <= square; r++)
 	{
