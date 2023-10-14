@@ -13,11 +13,11 @@ int main(void)
 
 	for (r = 1; r <= 100; r++)
 	{
-	if (r % 3 == 0)
+	if ((r % 3 == 0) && !(r % 5 == 0))
 	printf("Fizz");
-	else if (r % 5 == 0)
+	else if ((r % 5 == 0) && !(r % 3 == 0))
 	printf("Buzz");
-	else if ((r % 3 == 0) && (r % 5 == 0))
+	else if (r % 3 == 0 && r % 5 == 0)
 	printf("FizzBuzz");
 	else
 		printf("%d", r);
