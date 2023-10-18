@@ -8,23 +8,14 @@
 
 void print_rev(char *s)
 {
-	int r = 0;
-	int v = strlen(s) - 1;
+	int r, v, e;
 
-	if (!s)
+	v = strlen(s);
+	for (r = 0; r < v / 2; r++)
 	{
-		return;
-
-
-	while (r < v)
-	{
-	char e = s[r];
-
-	s[r] = s[v];
-	s[v] = e;
-	r++;
-	v--;
+		e = s[r];
+		s[r] = s[v - r - 1];
+		s[v - r - 1] = e;
 	}
 
-	}
 }
