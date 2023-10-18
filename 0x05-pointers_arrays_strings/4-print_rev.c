@@ -8,19 +8,19 @@
 
 void print_rev(char *s)
 {
-	if (!str)
+	if (!s)
 	{
 		return;
 
 	int r = 0;
-	int v = strlen(str) - 1;
+	int v = strlen(s) - 1;
 
 	while (r < v)
 	{
-	char s = str[r];
+	char e = s[r];
 
-	str[r] = str[v];
-	str[v] = s;
+	s[r] = s[v];
+	s[v] = e;
 	r++;
 	v--;
 	}
