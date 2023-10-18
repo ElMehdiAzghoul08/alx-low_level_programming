@@ -8,6 +8,10 @@
 
 void print_rev(char *s)
 {
+	if (!str)
+	{
+		return;
+
 	int r = 0;
 	int v = strlen(str) - 1;
 
