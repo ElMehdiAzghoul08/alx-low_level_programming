@@ -23,5 +23,5 @@ void print_rev(char *s)
 	v--;
 	}
 		while (v >= 0);
-	_putchar('\n')
+	_putchar('\n');
 }
