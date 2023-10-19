@@ -10,22 +10,10 @@ void print_rev(char *s)
 {
 	if (*s)
 	{
-		char *v = s;
-
-
-		while (*v != '\0')
-
-		{
-		v++;
-		}
-		v--;
-		while (v >= s)
-		{
-		_putchar (*v);
-		v--;
+	print_rev(s + 1);
+	_putchar(*s);
 		}
 	_putchar('\n');
 
 	}
 
-}
