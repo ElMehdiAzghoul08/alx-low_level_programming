@@ -22,6 +22,6 @@ void print_rev(char *s)
 	_putchar(s[v]);
 	v--;
 	}
-		while (i >= 0);
+		while (v >= 0);
 	_putchar('\n')
 }
