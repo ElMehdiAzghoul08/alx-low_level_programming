@@ -8,10 +8,15 @@
 
 void rev_string(char *s)
 {
-	if (*s)
+	int r, v;
+
+	v = strlen(s);
+
+	for (r = v ; v >= 0 ; 1--)
 	{
-		rev_string(s + 1);
-		_putchar(*s);
+	_putchar * (s + 1);
 
 	}
+	_putchar('\n');
+
 }
