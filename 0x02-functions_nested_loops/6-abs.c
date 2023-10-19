@@ -11,11 +11,13 @@
 int _abs(int v)
 {
 
-	while (v < 0)
+	(v < 0)
 	{
-	v = -v;
+	return (-v);
 
 	}
+	else
+	{
 	return (v);
-
+	}
 }
