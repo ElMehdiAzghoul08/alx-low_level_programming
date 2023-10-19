@@ -3,14 +3,13 @@
 /**
  * _abs - a function that computes the absolute value of an integer
  *
- * @int: integer
+ * @v: character
  *
  * Return: the absolute value of an integer
  */
 
-int _abs(int)
+int _abs(int v)
 {
-	int v;
 
 	while (v < 0)
 	{
