@@ -1,15 +1,15 @@
-#unclude "main.h"
+#include "main.h"
 
 /**
  * print_sign - is a function that prints the sign of a number
  *
  * @n: is the character
  *
- * Retuns: 1 if n is greter than zero and 0 if n is zero
+ * Return: 1 if n is greter than zero and 0 if n is zero
  * and -1 if n is less than zero
  */
 
-int print_sign(int n);
+int print_sign(int n)
 {
 
 	int n;
