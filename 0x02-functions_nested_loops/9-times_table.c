@@ -17,6 +17,8 @@ void times_table(void)
 	{
 	e = r * v;
 	}
+	while
+	{
 		if (v != 0)
 		{
 			_putchar(44);
@@ -40,6 +42,7 @@ void times_table(void)
 		_putchar('\n');
 
 			r++;
+}
 }
 	while (r <= 9);
 }
