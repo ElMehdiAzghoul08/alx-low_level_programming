@@ -5,9 +5,13 @@
  */
 void jack_bauer(void)
 {
-	for (int o = 0; o <= 23; o++)
+	int o, l;
+
+	int o, l;
+
+	for (o = 0; o <= 23; o++)
 {
-	for (int l = 0; l <= 59; l++)
+	for (l = 0; l <= 59; l++)
 	{
 		char r = (o / 10) + 48;
 		char v = (o % 10) + 48;
