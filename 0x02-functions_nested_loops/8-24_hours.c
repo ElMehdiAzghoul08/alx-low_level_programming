@@ -5,11 +5,10 @@
  */
 void jack_bauer(void)
 {
-	int o, l;
+	int o = 0;
+	int l = 0;
 
-	for (o = 0; o <= 23; o++)
-{
-	for (l = 0; l <= 59; l++)
+	while (l >= 23)
 	{
 		char r = (o / 10) + 48;
 		char v = (o % 10) + 48;
@@ -22,6 +21,12 @@ void jack_bauer(void)
 		_putchar(mr);
 		_putchar(mv);
 		_putchar('\n');
+	l++;
+
+	if (l == 59)
+	{
+	l = 0;
+	o++;
 	}
 }
 }
