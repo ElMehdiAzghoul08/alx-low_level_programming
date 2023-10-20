@@ -17,11 +17,11 @@ void jack_bauer(void)
 		char mv = (l % 10) + 48;
 
 		_putchar(r);
-		_putchar(v)
-		_putchar(58)
-		_putchar(mr)
-		_putchar(mv)
-		_putchar('\n')
+		_putchar(v);
+		_putchar(58);
+		_putchar(mr);
+		_putchar(mv);
+		_putchar('\n');
 	}
 }
 }
