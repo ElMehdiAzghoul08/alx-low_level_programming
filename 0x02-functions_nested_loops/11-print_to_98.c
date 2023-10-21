@@ -18,8 +18,8 @@ void print_to_98(int n)
 
 		{
 			printf("%d, ", rtt);
-			rtt--;
-		} while (rtt < 98);
+			rtt++;
+		} while (rtt <= 98);
 	} else
 	{
 		rtt = n;
@@ -27,8 +27,8 @@ void print_to_98(int n)
 
 		{
 			printf("%d, ", rtt);
-			rtt++;
-		} while (rtt < 98);
+			rtt--;
+		} while (rtt >= 98);
 	}
 	printf("98\n");
 }
