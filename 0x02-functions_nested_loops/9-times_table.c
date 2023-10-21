@@ -18,7 +18,7 @@ void times_table(void)
 	e = r * v;
 
 	if
-	(v != 0)
+	(v > 0)
 
 	{
 			_putchar(44);
