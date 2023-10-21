@@ -12,24 +12,22 @@ int main(void)
 {
 	int c, r, w;
 
-	for (c = 48; c < 57; c++)
-	{
-		for (r = 49; r < 58; r++)
+		for (c = 0; c < 99; c++)
 		{
-			for (w = 50; w < 58; w++)
+			r = (c / 10);
+			w = (c % 10);
+
+			if (w > r)
 			{
-				if (w > r && r > c)
+				putchar(r + 48);
+				putchar(w + 48);
+				if (c != 89)
 				{
-					putchar(c);
-					putchar(r);
-					putchar(w);
-					if (c != 55 || r != 56)
-					{
-						putchar(',' ' ');
+				putchar(44);
+				putchar(32);
+
 				}
 			}
 		}
-	}
-	putchar('\n');
 	return (0);
 }
