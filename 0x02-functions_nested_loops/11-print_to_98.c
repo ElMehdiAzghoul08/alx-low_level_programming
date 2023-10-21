@@ -12,23 +12,25 @@ void print_to_98(int n)
 	int rtt;
 
 	if (n < 98)
-	{
+{
 		rtt = n;
-		do
+		do {
 
-		{
-			printf("%d, ", rtt);
+			rtt != 98 ? printf("%d, ", rtt) : printf("%d", rtt);
 			rtt++;
 		} while (rtt <= 98);
-	} else
-	{
+
+		} else
+
+		{
+
 		rtt = n;
 		do
 
 		{
-			printf("%d, ", rtt);
+			rtt != 98 ? printf("%d, ", rtt) : printf("%d", rtt);
 			rtt--;
 		} while (rtt >= 98);
 	}
-	printf("98\n");
+	printf("\n");
 }
