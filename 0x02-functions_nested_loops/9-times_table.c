@@ -29,8 +29,8 @@ void times_table(void)
 			_putchar(32);
 			}
 		}
-			_putchar(48 + e / 10);
-			_putchar(48 + e % 10);
+			_putchar(e / 10 + 48);
+			_putchar(e % 10 + 48);
 
 			v++;
 	}
