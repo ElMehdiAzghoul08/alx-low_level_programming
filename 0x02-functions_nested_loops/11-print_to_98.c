@@ -9,19 +9,24 @@
 
 void print_to_98(int n)
 {
-	do
-
+	if (n < 98)
 	{
-		printf("%d", n);
-		if (n < 98)
+		rtt = n;
+		do
+
 		{
-			printf("%c", 44);
-			printf("%c", 32);
-			}
-		else
+			printf("%d, ", rtt);
+			rtt--;
+		} while (rtt < 98);
+	} else
+	{
+		rtt = n;
+		do
+
 		{
-			printf("\n");
-		}
-		n++;
-	} while (n <= 98);
+			printf("%d, ", rtt);
+			rtt++;
+		} while (rtt < 98);
+	}
+	printf("98\n")
 }
