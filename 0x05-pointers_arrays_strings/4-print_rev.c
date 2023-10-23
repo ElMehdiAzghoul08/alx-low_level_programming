@@ -17,6 +17,11 @@ void print_rev(char *s)
 		rev++;
 	}
 	v = rev - 1;
+	if (v < 0)
+	{
+		_putchar('\n');
+		return;
+	}
 
 	do {
 	_putchar(s[v]);
