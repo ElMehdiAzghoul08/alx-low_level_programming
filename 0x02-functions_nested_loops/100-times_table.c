@@ -17,17 +17,23 @@ void print_times_table(int n)
 
 		if (r / 100 != 0)
 
+
 		{
 		_putchar ((r / 100) + 48);
 		}
-		else {
+		else
+
+		{
 		_putchar(32);
 		}
 		if (((r / 10) % 10) != 0 || r / 100 == 1)
 
 		{
 		_putchar (((r / 10) % 10) + 48);
-		}else {
+		}
+		else
+
+		{
 		_putchar(32);
 		} _putchar ((r % 10) + 48);
 			if (d != n)
