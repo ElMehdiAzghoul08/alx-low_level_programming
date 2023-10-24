@@ -11,7 +11,7 @@ void puts2(char *str)
 	int p;
 	int car = 0;
 
-	for (p = 0; str[p] != '\0' && car < 224; p += 2)
+	for (p = 0; str[p] != '\0' && car < 223; p += 2)
 	{
 		if (str[p] >= 32 && str[p] <= 126)
 	{
