@@ -19,7 +19,7 @@ while (dest[r] != '\0')
 }
 	do {
 
-	dest[r] = str[v];
+	dest[r] = src[v];
 	r++;
 	v++;
 
