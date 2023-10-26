@@ -11,7 +11,7 @@
 
 int _sqrt_recursion(int n)
 {
-	if (n < 0 || n == 17)
+	if (n < 0 || sqrt(n) != (int)sqrt(n))
 	{
 		return (-1);
 	}
