@@ -26,6 +26,7 @@ int is_prime_(int n, int r)
 
 		return (is_prime_(n, r - 1));
 	}
+	return (0);
 }
 
 /**
