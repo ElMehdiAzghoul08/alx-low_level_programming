@@ -10,7 +10,7 @@
  */
 
 int is_prime_(int n, int r)
-	{
+{
 	if (n <= 1)
 	{
 	return (0);
