@@ -14,6 +14,7 @@ int is_prime_(int n, int r)
 	if (n <= 1)
 	{
 	return (0);
+	}
 
 		if (r == 1)
 	{
@@ -26,8 +27,6 @@ int is_prime_(int n, int r)
 
 		return (is_prime_(n, r - 1));
 	}
-	return (0);
-}
 
 /**
  * is_prime_number - a functio that returns 1 if the integer is prime number
