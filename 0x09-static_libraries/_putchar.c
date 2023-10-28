@@ -3,5 +3,5 @@
 
 int _putchar(char c)
 {
-	return putchar(c);
+	return _putchar(c);
 }

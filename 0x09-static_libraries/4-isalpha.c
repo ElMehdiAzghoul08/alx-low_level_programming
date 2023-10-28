@@ -5,5 +5,5 @@
 
 int _isalpha(int c)
 {
-	return isaplha(c)
+	return _isalpha(c);
 	}
