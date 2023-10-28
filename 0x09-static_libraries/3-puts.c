@@ -7,12 +7,12 @@
  *
  */
 
-void _puts(char *str)
+void _puts(char *s)
 {
-	while (*str)
+	while (*s)
 	{
-	_putchar(*str);
-	str++;
+	_putchar(*s);
+	s++;
 	}
 	_putchar('\n');
 }
