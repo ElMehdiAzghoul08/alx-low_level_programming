@@ -5,11 +5,11 @@
  * @argc: input
  * @argv: input
  *
- * Return: number of arguments
+ * Return: 0
  */
 
-int main(int argc,char __attribute__((unused))*argv[])
+int main(int argc, char __attribute__((unused))*argv[])
 {
-	printf("%d\n", argc);
+	printf("%d\n", argc - 1);
 	return (0);
 }
