@@ -13,7 +13,8 @@
 
 char *_strdup(char *str)
 {
-	int x;
+	size_t x;
+	size_t range;
 
 	char *dupleoftsring;
 
@@ -22,15 +23,15 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	size_t range = strlen(str);
+	range = strlen(str);
 
-	char *dupleofstring = (char *)malloc((range + 1) * sizeof(char));
+	*dupleofstring = (char *)malloc((range + 1) * sizeof(char));
 
 	if (dupleofstring != NULL)
 	{
-		for (size_t x = 0; x < range; x++)
+		for (x = 0; x < range; x++)
 		{
-			dupleofstring[x] = str[x];
+		dupleofstring[x] = str[x];
 
 		}
 
