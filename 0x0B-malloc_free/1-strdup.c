@@ -25,7 +25,7 @@ char *_strdup(char *str)
 
 	range = strlen(str);
 
-	*dupleofstring = (char *)malloc((range + 1) * sizeof(char));
+	dupleofstring = (char *)malloc((range + 1) * sizeof(char));
 
 	if (dupleofstring != NULL)
 	{
