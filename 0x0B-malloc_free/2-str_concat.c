@@ -14,8 +14,8 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	size_t range s1;
-	size_t range s2;
+	size_t ranges1;
+	size_t ranges2;
 	char *product;
 
 	if (s1 == NULL)
@@ -27,17 +27,17 @@ char *str_concat(char *s1, char *s2)
 		s2 = "";
 	}
 
-	range s1 = strlen(s1);
+	ranges1 = strlen(s1);
 
-	range s2 = strlen(s2);
+	ranges2 = strlen(s2);
 
-	product = (char *)malloc((range s1 + range s2 + 1) * sizeof(char));
+	product = (char *)malloc((ranges1 + ranges2 + 1) * sizeof(char));
 
 	if (product != NULL)
 	{
 		strcpy(product, s1);
-		strcpy(product + range s1, s2);
-		product[range s1 + range s2] = '\0';
+		strcpy(product + ranges1, s2);
+		product[ranges1 + ranges2] = '\0';
 	}
 
 	return (product);
