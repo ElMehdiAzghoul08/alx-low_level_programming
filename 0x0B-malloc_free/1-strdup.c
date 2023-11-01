@@ -16,7 +16,7 @@ char *_strdup(char *str)
 	size_t x;
 	size_t range;
 
-	char *dupleoftsring;
+	char *dupleofstring;
 
 	if (str == NULL)
 	{
