@@ -9,7 +9,7 @@
 char *argstostr(int ac, char **av)
 {
 	int x;
-	int *rv;
+	char *rv;
 	int range;
 	char *product;
 	int local;
