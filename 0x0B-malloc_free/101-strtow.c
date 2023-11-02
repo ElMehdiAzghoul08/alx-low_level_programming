@@ -13,9 +13,9 @@
 int c_wd(char *str)
 {
 
-	int wct;
+	int wct, rdd;
 	wct = 0;
-	int rdd;
+	rdd = 0;
 
 	while (*str) 
 	{
@@ -113,7 +113,7 @@ char **strtow(char *str)
 		}
 
 		strcpy(k[rx], &str[rtt]);
-		words[rx][range] = '\0';
+		k[rx][range] = '\0';
 		rx++;
 	}
 
