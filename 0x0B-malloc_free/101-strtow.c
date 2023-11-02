@@ -1,5 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
+
 /**
  * c_wd - a function
  *
@@ -14,7 +16,6 @@ int c_wd(char *str)
 	int wct;
 	wct = 0;
 	int rdd;
-	rdd = 0;
 
 	while (*str) 
 	{
