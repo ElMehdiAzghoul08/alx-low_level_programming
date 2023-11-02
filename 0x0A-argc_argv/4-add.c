@@ -14,22 +14,17 @@
 int main(int argc, char *argv[])
 {
 
-	int x, y, add;
+	int x, y, add, v = 1;
 
-	if (argc > 3)
-	{
 		if (argc == 1)
 		{
 		printf("0\n");
-
 		return (0);
 	}
 	else
 	{
 		printf("Error\n");
-
 		return (1);
-	}
 	}
 	add = 0;
 	for (x = 1; x < argc; x++)
@@ -38,13 +33,23 @@ int main(int argc, char *argv[])
 		{
 			if (!isdigit(argv[x][y]))
 			{
-				printf("Error\n");
-				return (1);
+			v = 0;
+			break;
 		}
 	}
+
+	if (v)
+
+	{
 	add += atoi(argv[x]);
 	}
-	printf("%d\n", add);
+		else
 
+		{
+			printf("Error\n");
+			return (1);
+		}
+	}
+	printf("%d\n", add);
 	return (0);
 }
