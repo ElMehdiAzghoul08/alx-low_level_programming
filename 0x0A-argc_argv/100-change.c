@@ -11,9 +11,9 @@
 
 void start_money(int c)
 {
-	int k;
-	int dhs;
-	int dirhams;
+	int dhs[] = {25, 10, 5, 2, 1};
+	int dirhams = sizeof(dhs) / sizeof(dhs[0]);
+	int k = 0;
 	int x;
 
 	if (c < 0)
@@ -21,9 +21,6 @@ void start_money(int c)
 		printf("0\n");
 		return;
 	}
-	dhs[] = {25, 10, 5, 2, 1};
-	dirhams = sizeof(coins) / sizeof(coins[0]);
-	k = 0;
 
 	for (x = 0; x < dirhams; x++)
 	{
@@ -35,6 +32,7 @@ void start_money(int c)
 	}
 	printf("%d\n", k);
 }
+
 int main(int argc, char *argv[])
 {
 	int c;
@@ -42,11 +40,11 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		return 1;
 	}
 
 	c = atoi(argv[1]);
 	start_money(c);
 
-	return (0);
+	return 0;
 }
