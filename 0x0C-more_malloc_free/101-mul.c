@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-
+#include <unistd.h>
 /**
  * a_nrr - a function
  * @product: input
@@ -55,16 +55,13 @@ void vrrt(char *v1, char *v2)
 	int *product;
 	int x, y, w, e;
 
-	range1 = strlen(v1), range2 = strlen(v2);
+	range1 = strlen(v1);
+	range2 = strlen(v2);
 	range = range1 + range2;
 	product = (int *)malloc(range * sizeof(int));
 
-
-
 	for (x = 0; x < range; x++)
-	{
-	product[x] = 0;
-	}
+		product[x] = 0;
 
 	for (x = range1 - 1; x >= 0; x--)
 		for (y = range2 - 1; y >= 0; y++)
@@ -74,7 +71,7 @@ void vrrt(char *v1, char *v2)
 			product[x + y] += e / 10;
 			product[x + y + 1] = e % 10;
 		}
-	vrtt(product, range);
+	a_nrr(product, range);
 	free(product);
 }
 /**
@@ -87,14 +84,13 @@ void vrrt(char *v1, char *v2)
 
 int main(int argc, char *argv[])
 {
-	char h[];
+	char h[] = "Error\n";
 
 	if (argc != 3 || !a_rvv(argv[1]) || !a_rvv(argv[2]))
 	{
-		h[] = "Error\n";
 		write(1, h, strlen(h));
 		exit(98);
 	}
-	vrtt(argv[1], argv[2]);
+	vrrt(argv[1], argv[2]);
 	return (0);
 }
