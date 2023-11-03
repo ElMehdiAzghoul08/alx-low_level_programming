@@ -36,7 +36,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	range = (old_size < new_size) ? old_size : new_size;
 
-	*rv = malloc(new_size);
+	rv = malloc(new_size);
 	if (rv != NULL)
 	{
 		memcpy(rv, ptr, range);
