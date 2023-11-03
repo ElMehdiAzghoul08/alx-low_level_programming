@@ -18,7 +18,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int range1, range2;
 	char *ar;
 
-	if (s2 == NULL) s2 = "";
+	if (s2 == NULL)
+	{
+	s2 = "";
+	}
 
 	range1 = (s1 != NULL) ? strlen(s1) : 0;
 	range2 = strlen(s2);
