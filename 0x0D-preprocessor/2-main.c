@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * main - function that print a name of the file
  * Return: 0
