@@ -13,36 +13,36 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *newDog;
+	dog_t *alfa;
 
 	if (name == NULL || owner == NULL || name[0] == '\0' || owner[0] == '\0')
 	{
 		return (NULL);
 	}
 
-	newDog = (dog_t *)malloc(sizeof(dog_t));
+	alfa = (dog_t *)malloc(sizeof(dog_t));
 
-	if (newDog == NULL)
+	if (alfa == NULL)
 	{
 		return (NULL);
 	}
 
-	newDog->name = (char *)malloc(strlen(name) + 1);
-	newDog->owner = (char *)malloc(strlen(owner) + 1);
+	alfa->name = (char *)malloc(strlen(name) + 1);
+	alfa->owner = (char *)malloc(strlen(owner) + 1);
 
-	if (newDog->name == NULL || newDog->owner == NULL)
+	if (alfa->name == NULL || alfa->owner == NULL)
 	{
-		free(newDog->name);
-		free(newDog->owner);
-		free(newDog);
+		free(alfa->name);
+		free(alfa->owner);
+		free(alfa);
 		return (NULL);
 	}
 
-	strcpy(newDog->name, name);
-	strcpy(newDog->owner, owner);
-	newDog->age = age;
+	strcpy(alfa->name, name);
+	strcpy(alfa->owner, owner);
+	alfa->age = age;
 
-	return (newDog);
+	return (alfa);
 }
 /**
  * rv_t - a function
