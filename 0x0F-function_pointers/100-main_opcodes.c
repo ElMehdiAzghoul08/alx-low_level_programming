@@ -10,9 +10,10 @@
 
 void pr_the_op(int y)
 {
-	char *rv
-		int x;
-	rv = (char *)&main;
+	int x;
+	char *rv;
+
+	rv = (char *)&pr_the_op;
 
 	if (y < 0)
 	{
@@ -29,6 +30,7 @@ void pr_the_op(int y)
 	}
 	printf("\n");
 }
+
 
 /**
  * main - a function
