@@ -48,7 +48,6 @@ void pr_string(char *s)
  */
 
 void print_all(const char * const format, ...)
-
 {
 	va_list rv;
 	char *s;
@@ -56,7 +55,7 @@ void print_all(const char * const format, ...)
 	double f;
 	char c;
 	const char *a;
-	
+
 	a = format;
 
 	va_start(rv, format);
@@ -81,10 +80,13 @@ void print_all(const char * const format, ...)
 				s = va_arg(rv, char *);
 				pr_string(s);
 				break;
+			case ' ':
+			case ',':
+				break;
+					printf("%c", *a);
 		}
 		a++;
 	}
-
 	va_end(rv);
 	printf("\n");
 }
