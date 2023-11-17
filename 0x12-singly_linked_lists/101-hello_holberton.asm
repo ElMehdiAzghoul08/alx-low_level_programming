@@ -8,8 +8,10 @@ extern printf
 extern exit
 
 main:
+    sub rsp, 8
     mov rdi, hello
     call printf
+    add rsp, 8
 
     mov rdi, 0
     call exit
