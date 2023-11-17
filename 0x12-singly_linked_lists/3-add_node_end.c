@@ -14,16 +14,16 @@ list_t *make_node(const char *str)
 
 	if (!recent_node)
 	{
-		perror("malloc failed");
-		exit(EXIT);
+		perror("fail");
+		exit(EXIT_FAILURE);
 	}
 
 	recent_node->str = strdup(str);
 	if (!recent_node->str)
 	{
-		perror("strdup failed");
+		perror("fail");
 		free(recent_node);
-		exit(EXIT);
+		exit(EXIT_FAILURE);
 	}
 
 	recent_node->len = strlen(str);
