@@ -4,7 +4,10 @@ section .data
 section .text
     global main
 
-sec_main:
+extern printf
+extern exit
+
+main:
     mov rdi, hello
     call printf
 
