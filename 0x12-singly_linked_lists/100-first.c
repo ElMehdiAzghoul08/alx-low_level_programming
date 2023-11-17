@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 /**
- * jst__print - a function
+ * __print_first - a function
+ * @constructor: input
  * Return: void
  */
 
-void jst__print(void)
+void __attribute__((constructor))__print_first(void)
 {
-	printf("You're beat! and yet, you must allow,
-			\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n"
+			"I bore my house upon my back!\n");
 }
