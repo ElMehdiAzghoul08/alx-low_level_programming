@@ -15,12 +15,6 @@ void error_to_print(const char *context)
 	dprintf(STDERR_FILENO, "%s\n", context);
 	exit(98);
 }
-
-void print_error(const char *context);
-void print_elf_hr(const Elf64_Ehdr *hr);
-void lets_print_magic_and_ELFHEADER(const Elf64_Ehdr *hr);
-void lets_print_type(const Elf64_Ehdr *hr);
-
 /**
  * lets_print_magic_and_ELFHEADER - a function
  * @hr: input
@@ -33,8 +27,9 @@ void lets_print_magic_and_ELFHEADER(const Elf64_Ehdr *hr)
 	printf("ELF Header:\n");
 	printf("  Magic:   ");
 	for (a = 0; a < EI_NIDENT; ++a)
+	{
 		printf("%02x ", hr->e_ident[a]);
-
+	}
 	printf("\n");
 
 	printf("  Class:                             ");
@@ -63,15 +58,17 @@ void lets_print_magic_and_ELFHEADER(const Elf64_Ehdr *hr)
 			printf("<unknown>\n");
 			break;
 	}
-	printf("  Version:                           %u (current)\n", hr->e_ident[EI_VERSION]);
-	printf("  OS/ABI:                            %u\n", hr->e_ident[EI_OSABI]);
-	printf("  ABI Version:                       %u\n", hr->e_ident[EI_ABIVERSION]);
+	printf("  Version/OS/ABI/ABI Version:        %u/%u/%u\n",
+			hr->e_ident[EI_VERSION], hr->e_ident[EI_OSABI],
+			hr->e_ident[EI_ABIVERSION]);
 }
+
 /**
  * lets_print_type - a function
  * @hr: input
  * Return: void
  */
+
 void lets_print_type(const Elf64_Ehdr *hr)
 {
 	printf("  Type:                              ");
@@ -88,7 +85,8 @@ void lets_print_type(const Elf64_Ehdr *hr)
 			break;
 	}
 
-	printf("  Entry point address:               0x%lx\n", (unsigned long)hr->e_entry);
+	printf("  Entry point address:               0x%lx\n",
+			(unsigned long)hr->e_entry);
 }
 
 /**
@@ -97,6 +95,7 @@ void lets_print_type(const Elf64_Ehdr *hr)
  * @argv: input
  * Return: 0
  */
+
 int main(int argc, char *argv[])
 {
 	int description_ofthe_file;
@@ -104,22 +103,25 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		print_error("Usage: elf_header elf_filename");
+		error_to_print("Usage: elf_header elf_filename");
 	}
 
 	description_ofthe_file = open(argv[1], O_RDONLY);
 	if (description_ofthe_file == -1)
-		print_error("Error: Can't open file");
+	{
+		error_to_print("Error: Can't open file");
+	}
+
 
 	if (read(description_ofthe_file, &hr, sizeof(hr)) != sizeof(hr))
-		print_error("Error: Can't read ELF header");
-
-	if (lseek(description_ofthe_file, (off_t)hr.e_phoff, SEEK_SET) == -1)
-		print_error("Error: Can't lseek");
+	{
+		error_to_print("Error: Can't read ELF header");
+	}
 
 	close(description_ofthe_file);
 
-	print_elf_hr(&hr);
+	lets_print_magic_and_ELFHEADER(&hr);
+	lets_print_type(&hr);
 
 	return (0);
 }
