@@ -61,8 +61,7 @@ void lets_print_magic_and_ELFHEADER(const Elf64_Ehdr *hr)
 			break;
 	}
 
-	printf("  Version:                           %u (current)\n",
-			hr->e_ident[EI_VERSION]);
+	printf("  Version:                           %u (current)\n", hr->e_ident[EI_VERSION]);
 
 	printf("  OS/ABI:                            ");
 	switch (hr->e_ident[EI_OSABI])
@@ -81,10 +80,24 @@ void lets_print_magic_and_ELFHEADER(const Elf64_Ehdr *hr)
 			break;
 	}
 
-	printf("  ABI Version:                       %d\n",
-			(int)hr->e_ident[EI_ABIVERSION]);
-}
+	printf("  ABI Version:                       %d\n", (int)hr->e_ident[EI_ABIVERSION]);
 
+	printf("  Type:                              ");
+	switch (hr->e_ident[EI_CLASS])
+	{
+		case ELFCLASS32:
+			printf("EXEC (Executable file)\n");
+			printf("  Entry point address:               0x%lx\n", (unsigned long)hr->e_entry);
+			break;
+		case ELFCLASS64:
+			printf("EXEC (Executable file)\n");
+			printf("  Entry point address:               0x%lx\n", (unsigned long)hr->e_entry);
+			break;
+		default:
+			printf("<unknown>\n");
+			break;
+	}
+}
 /**
  * lets_print_type - a function to print ELF type information
  * @hr: input ELF header
@@ -106,8 +119,7 @@ void lets_print_type(const Elf64_Ehdr *hr)
 			break;
 	}
 
-	printf("  Entry point address:               0x%lx\n",
-			(unsigned long)hr->e_entry);
+	printf("  Entry point address:               0x%lx\n", (unsigned long)hr->e_entry);
 }
 
 /**
