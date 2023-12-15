@@ -5,9 +5,10 @@
 #include <unistd.h>
 
 #define _SIZE_of_B 64
+
 /**
- * error_to_print - a function
- * @context: input
+ * error_to_print - a function to print error messages and exit
+ * @context: input error message
  * Return: void
  */
 void error_to_print(const char *context)
@@ -15,22 +16,21 @@ void error_to_print(const char *context)
 	dprintf(STDERR_FILENO, "%s\n", context);
 	exit(98);
 }
+
 /**
- * lets_print_magic_and_ELFHEADER - a function
- * @hr: input
+ * lets_print_magic_and_ELFHEADER - a function to print ELF header information
+ * @hr: input ELF header
  * Return: void
  */
 void lets_print_magic_and_ELFHEADER(const Elf64_Ehdr *hr)
 {
 	int a;
 
-	printf("ELF Header:\n");
-	printf("  Magic:   ");
+	printf("ELF Header:\n  Magic:   ");
 	for (a = 0; a < EI_NIDENT; ++a)
 	{
 		printf("%02x ", hr->e_ident[a]);
-	}
-	printf("\n");
+	} printf("\n");
 
 	printf("  Class:                             ");
 	switch (hr->e_ident[EI_CLASS])
@@ -44,8 +44,7 @@ void lets_print_magic_and_ELFHEADER(const Elf64_Ehdr *hr)
 		default:
 			printf("<unknown>\n");
 			break;
-	}
-	printf("  Data:                              ");
+	} printf("  Data:                              ");
 	switch (hr->e_ident[EI_DATA])
 	{
 		case ELFDATA2LSB:
@@ -58,17 +57,19 @@ void lets_print_magic_and_ELFHEADER(const Elf64_Ehdr *hr)
 			printf("<unknown>\n");
 			break;
 	}
-	printf("  Version/OS/ABI/ABI Version:        %u/%u/%u\n",
-			hr->e_ident[EI_VERSION], hr->e_ident[EI_OSABI],
+	printf("  Version:                           %u (current)\n",
+			hr->e_ident[EI_VERSION]);
+	printf("  OS/ABI:                            %u\n",
+			hr->e_ident[EI_OSABI]);
+	printf("  ABI Version:                       %u\n",
 			hr->e_ident[EI_ABIVERSION]);
 }
 
 /**
- * lets_print_type - a function
- * @hr: input
+ * lets_print_type - a function to print ELF type information
+ * @hr: input ELF header
  * Return: void
  */
-
 void lets_print_type(const Elf64_Ehdr *hr)
 {
 	printf("  Type:                              ");
@@ -90,12 +91,11 @@ void lets_print_type(const Elf64_Ehdr *hr)
 }
 
 /**
- * main - function
- * @argc: input
- * @argv: input
- * Return: 0
+ * main - the main function
+ * @argc: number of command-line arguments
+ * @argv: array of command-line arguments
+ * Return: 0 on success, 98 on error
  */
-
 int main(int argc, char *argv[])
 {
 	int description_ofthe_file;
@@ -111,7 +111,6 @@ int main(int argc, char *argv[])
 	{
 		error_to_print("Error: Can't open file");
 	}
-
 
 	if (read(description_ofthe_file, &hr, sizeof(hr)) != sizeof(hr))
 	{
