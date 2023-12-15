@@ -56,13 +56,26 @@ void lets_print_magic_and_ELFHEADER(const Elf64_Ehdr *hr)
 		default:
 			printf("<unknown>\n");
 			break;
-	}
-	printf("  Version:                           %u (current)\n",
+	} printf("  Version:                           %u (current)\n",
 			hr->e_ident[EI_VERSION]);
-	printf("  OS/ABI:                            %u\n",
-			hr->e_ident[EI_OSABI]);
-	printf("  ABI Version:                       %u\n",
-			hr->e_ident[EI_ABIVERSION]);
+
+	printf("  OS/ABI:                            ");
+	switch (hr->e_ident[EI_OSABI])
+	{
+		case ELFOSABI_SYSV:
+			printf("UNIX - System V\n");
+			break;
+		case ELFOSABI_NETBSD:
+			printf("UNIX - NetBSD\n");
+			break;
+		case ELFOSABI_SOLARIS:
+			printf("UNIX - Solaris\n");
+			break;
+		default:
+			printf("<unknown: %u>\n", hr->e_ident[EI_OSABI]);
+			break;
+	} printf("  ABI Version:                       %d\n",
+			(int)hr->e_ident[EI_ABIVERSION]);
 }
 
 /**
@@ -84,9 +97,7 @@ void lets_print_type(const Elf64_Ehdr *hr)
 		default:
 			printf("<unknown>\n");
 			break;
-	}
-
-	printf("  Entry point address:               0x%lx\n",
+	} printf("  Entry point address:               0x%lx\n",
 			(unsigned long)hr->e_entry);
 }
 
@@ -105,19 +116,15 @@ int main(int argc, char *argv[])
 	{
 		error_to_print("Usage: elf_header elf_filename");
 	}
-
 	description_ofthe_file = open(argv[1], O_RDONLY);
 	if (description_ofthe_file == -1)
 	{
 		error_to_print("Error: Can't open file");
 	}
-
 	if (read(description_ofthe_file, &hr, sizeof(hr)) != sizeof(hr))
 	{
 		error_to_print("Error: Can't read ELF header");
-	}
-
-	close(description_ofthe_file);
+	} close(description_ofthe_file);
 
 	lets_print_magic_and_ELFHEADER(&hr);
 	lets_print_type(&hr);
