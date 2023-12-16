@@ -1,7 +1,3 @@
-#ifndef ELFOSABI_SORTIX
-#define ELFOSABI_SORTIX
-#endif
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -10,43 +6,13 @@
 #include <string.h>
 /**
  * lets_print_the_error - a function
- * @contxt: input
+ * @contxt: function
  * Return: void
  */
 void lets_print_the_error(const char *contxt)
 {
 	fprintf(stderr, "%s\n", contxt);
 	exit(98);
-}
-/**
- * lets_rename_osabi_ - a function
- * @osabi_: input
- * @abi: input
- * @oabi_n: input
- * Return: osabi_n
- */
-const char *lets_rename_osabi_(unsigned char osabi_, unsigned char abi)
-{
-	const char *osabi_n = "Unknown";
-
-	switch (osabi_)
-	{
-		case ELFOSABI_SYSV:
-			osabi_n = "UNIX - System V";
-			break;
-		case ELFOSABI_NETBSD:
-			osabi_n = "UNIX - NetBSD";
-			break;
-		case ELFOSABI_SOLARIS:
-			if (abi == 1)
-				osabi_n = "UNIX - Solaris";
-			break;
-		case 53:
-			osabi_n = "Sortix";
-			break;
-	}
-
-	return (osabi_n);
 }
 /**
  * lets_print_magic_and_ELFHEADER - a function
