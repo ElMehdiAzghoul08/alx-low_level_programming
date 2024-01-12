@@ -4,7 +4,7 @@
 /**
  * print_dlistint - a function
  * @h: input
- * Return the ocunted nodes
+ * Return: the number of nodes
  */
 size_t print_dlistint(const dlistint_t *h)
 {
