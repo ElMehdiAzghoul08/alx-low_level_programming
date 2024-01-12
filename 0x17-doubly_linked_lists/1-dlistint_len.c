@@ -4,7 +4,7 @@
 /**
  * dlistint_len - a function
  * @h: input
- * Return : number of elemets
+ * Return: number of elemets
  */
 size_t dlistint_len(const dlistint_t *h)
 {
