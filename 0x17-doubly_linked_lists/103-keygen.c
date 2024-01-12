@@ -4,8 +4,8 @@
 
 /**
  * main - a function
- * argc: input
- * argv: input
+ * @argc: input
+ * @argv: input
  * Return: 0
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
@@ -29,7 +29,8 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 
 	tmp = 0;
 	for (i = 0; i < len; i++)
-	{ if (argv[1][i] > tmp)
+	{
+		if (argv[1][i] > tmp)
 		tmp = argv[1][i];
 	}
 	srand(tmp ^ 14);
