@@ -54,7 +54,7 @@ if (prst->n == value)
 return (prst);
 
 prst = prst->next;
-    }
+}
 
 return (NULL);
 }

@@ -4,20 +4,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+/**
+ * struct listint_s - a structure
+ * @n: parameter
+ * @index: parameter
+ * @next: parameter
+ */
 typedef struct listint_s
 {
-    int n;
-    size_t index;
-    struct listint_s *next;
+int n;
+size_t index;
+struct listint_s *next;
 } listint_t;
-
+/**
+ * struct skiplist_s - a structure
+ * @n: parameter
+ * @index: parameter
+ * @next: parameter
+ * @express: parameter
+ */
 typedef struct skiplist_s
 {
-    int n;
-    size_t index;
-    struct skiplist_s *next;
-    struct skiplist_s *express;
+int n;
+size_t index;
+struct skiplist_s *next;
+struct skiplist_s *express;
 } skiplist_t;
 
 int linear_search(int *array, size_t size, int value);

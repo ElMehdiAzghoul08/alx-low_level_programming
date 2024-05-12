@@ -3,7 +3,8 @@
 /**
  * exponential_search - a function
  * @array: input
- * @size: input
+ * @lw: input
+ * @ht: input
  * @value: input
  * Return: value
  */
@@ -37,7 +38,7 @@ return (the_binary_sr_(array, lw, ht, value));
 }
 
 /**
- * the_binary_sr - a function
+ * the_binary_sr_ - a function
  * @array: input
  * @lw: input
  * @ht: input
